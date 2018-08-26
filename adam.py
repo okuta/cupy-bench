@@ -35,5 +35,5 @@ for size in [1, 10, 100, 1000, 2000]:
 
     def f():
         call_adam(zero, zero, zero, zero)
-    util.measure(f, "adam, %4d" % (size), 1000)
+    util.measure(f, "adam, %4d" % (size), 100)
 
