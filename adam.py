@@ -30,10 +30,10 @@ def call_adam(grad, data, state_m, state_v):
             data, state_m, state_v)
 
 
-for size in [1, 10, 100, 1000, 2000, 5000]:
+for size in [1, 10, 100, 1000, 2000]:
     zero = cupy.zeros((size, size))
 
     def f():
         call_adam(zero, zero, zero, zero)
-    util.measure(f, "adam, %d" % (size), 1000)
+    util.measure(f, "adam, %4d" % (size), 1000)
 

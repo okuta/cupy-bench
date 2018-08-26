@@ -33,9 +33,9 @@ sizes = [(0, "0B"), (1024, "1K"), (1024 * 1024, "1M")]
 
 for xp in [cupy, numpy]:
     if xp is cupy:
-        str = "cupy"
+        str = "cp"
     else:
-        str = "numpy"
+        str = "np"
     if xp is cupy:
         for size, s in sizes:
             memptr = cupy.cuda.alloc(size)

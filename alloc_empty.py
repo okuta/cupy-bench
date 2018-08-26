@@ -30,7 +30,7 @@ def f4():
         if i % 10 == 0:
             buf[i // 10] = None
 
-util.measure(f1, "alloc")
+util.measure(f1, "alloc         ")
 
 cupy.get_default_memory_pool().free_all_blocks()
 gc.collect()
@@ -38,7 +38,7 @@ util.measure(f2, "alloc_and_free")
 
 cupy.get_default_memory_pool().free_all_blocks()
 gc.collect()
-util.measure(f3, "empty")
+util.measure(f3, "empty         ")
 
 cupy.get_default_memory_pool().free_all_blocks()
 gc.collect()

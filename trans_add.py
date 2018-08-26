@@ -14,7 +14,7 @@ for xp in [cupy, numpy]:
             b = xp.zeros((size, 32), dtype='f')
             def f():
                 a + b
-            head = "trans" if trans else "normal"
-            str = "cupy" if xp is cupy else "numpy"
+            head = "t" if trans else "n"
+            str = "cp" if xp is cupy else "np"
             util.measure(f, "%s_add_%s, %5d" % (head, str, size))
 

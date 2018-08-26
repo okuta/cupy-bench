@@ -10,6 +10,6 @@ for xp in [cupy, numpy]:
         b = xp.zeros((size, 32, 32), dtype='f')
         def f():
             xp.matmul(a, b)
-        str = "cupy" if xp is cupy else "numpy"
+        str = "cp" if xp is cupy else "np"
         util.measure(f, "matmul_%s, %5d" % (str, size), 5)
 
