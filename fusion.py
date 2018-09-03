@@ -18,8 +18,8 @@ for xp in [cupy, numpy]:
         if xp is numpy and size > 2 ** 13:
             continue
         a = numpy.float32(2.0)
-        x = xp.zeros((1024, size), dtype='f')
-        y = xp.zeros((1024, size), dtype='f')
+        x = xp.ones((1024, size), 'f')
+        y = xp.ones((1024, size), 'f')
 
         def f():
             saxpy(a, x, y)
@@ -29,8 +29,8 @@ for xp in [cupy, numpy]:
 xp = cupy
 for size in [2 ** i for i in range(20)]:
     a = numpy.float32(2.0)
-    x = xp.zeros((1024, size), dtype='f')
-    y = xp.zeros((1024, size), dtype='f')
+    x = xp.ones((1024, size), 'f')
+    y = xp.ones((1024, size), 'f')
 
     def f():
         saxpy_fuse(a, x, y)
