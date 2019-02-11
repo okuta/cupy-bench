@@ -19,8 +19,8 @@ def measure(func, name="hoge", cnt=10, times=20):
         end_gpu.synchronize()
         elapsed_gpu = cupy.cuda.get_elapsed_time(start_gpu, end_gpu) / cnt
         elapsed_cpu = (end_cpu - start_cpu) / cnt * 1000
-        gpu_times.append(elapsed_gpu)
-        cpu_times.append(elapsed_cpu)
+        gpu_times.append(elapsed_gpu) # msec
+        cpu_times.append(elapsed_cpu) # msec
 
     gpu_times = sorted(gpu_times)[2:-2]
     cpu_times = sorted(cpu_times)[2:-2]
